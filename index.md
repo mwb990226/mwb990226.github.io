@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: EditVerity Sciences, Inc.
 ---
 
 ## Making genome editing outcomes fully visible.
