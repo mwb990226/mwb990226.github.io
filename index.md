@@ -5,6 +5,10 @@ title: EditVerity Sciences, Inc.
 
 [Home](/) · [Technology](/technology) · [About](/about) · [Contact](/contact)
 
+<p align="center">
+  <img src="/logo.png" alt="EditVerity Sciences logo" width="220">
+</p>
+
 ## Making genome editing outcomes fully visible.
 
 EditVerity provides **error-suppressed sequencing** and **outcome interpretation**
