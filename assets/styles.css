@@ -6,16 +6,16 @@
 
 .brand-main{
   font-weight:900;
-  font-size:18px;
-  letter-spacing:0.3px;
+  font-size:20px;
+  letter-spacing:0.4px;
 }
 
 .brand-sub{
-  font-weight:700;
-  font-size:12px;
-  letter-spacing:0.25em;
+  font-weight:800;
+  font-size:11px;
+  letter-spacing:0.32em;
   text-transform:uppercase;
-  opacity:0.75;
+  opacity:0.8;
 }
 
 :root{
@@ -58,9 +58,9 @@ hr{border:0;border-top:1px solid var(--border); margin:28px 0}
   display:flex; align-items:center; justify-content:space-between;
   padding:14px 0; gap:14px;
 }
-.brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px}
+.brand{display:flex; align-items:center; gap:14px; font-weight:900; letter-spacing:.2px}
 .brand img{
-  height:40px;   /* 放大 logo */
+  height:64px;
   width:auto;
 }
 .menu{display:flex; align-items:center; gap:14px; font-weight:650; color:rgba(234,241,255,.82)}
