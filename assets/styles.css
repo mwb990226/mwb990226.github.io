@@ -1,33 +1,61 @@
 :root{
-  --bg:#0b1220;
-  --card:#0f1a2e;
-  --text:#eaf0ff;
-  --muted:#b7c3e6;
-  --brand:#31c48d;
-  --brand2:#3b82f6;
+  --bg:#070b14;
+  --panel:#0b1324;
+  --card:#0f1b33;
+  --text:#eaf1ff;
+  --muted:#b7c6ea;
   --border:rgba(255,255,255,.12);
+
+  /* pulled to match your logo vibe (blue → teal/green) */
+  --blue:#1f6feb;
+  --teal:#14b8a6;
+  --green:#31c48d;
+
+  --grad: linear-gradient(90deg, var(--blue), var(--teal), var(--green));
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--text); background:#070b14;}
+html,body{margin:0;padding:0}
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color:var(--text);
+  background: radial-gradient(1200px 700px at 15% 10%, rgba(31,111,235,.18), transparent 55%),
+              radial-gradient(1000px 650px at 85% 20%, rgba(49,196,141,.14), transparent 55%),
+              var(--bg);
+}
+
 a{color:inherit;text-decoration:none}
 .container{width:min(1120px, 92vw); margin:0 auto}
+hr{border:0;border-top:1px solid var(--border); margin:28px 0}
 
 .nav{
   position:sticky; top:0; z-index:50;
-  background:rgba(7,11,20,.78);
+  background:rgba(7,11,20,.72);
   backdrop-filter: blur(10px);
   border-bottom:1px solid var(--border);
 }
-.nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:14px;}
-.brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
+.nav-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0; gap:14px;
+}
+.brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px}
 .brand img{height:28px; width:auto}
-.menu{display:flex; align-items:center; gap:18px; font-weight:600; color:var(--muted)}
-.menu > a, .drop > button{padding:10px 10px; border-radius:10px}
-.menu > a:hover, .drop > button:hover{background:rgba(255,255,255,.06)}
+.menu{display:flex; align-items:center; gap:14px; font-weight:650; color:rgba(234,241,255,.82)}
+.menu > a, .drop > button{
+  padding:10px 10px; border-radius:12px;
+  border:1px solid transparent;
+}
+.menu > a:hover, .drop > button:hover{
+  background:rgba(255,255,255,.06);
+  border-color:rgba(255,255,255,.10);
+}
 .cta{
-  background:linear-gradient(90deg,var(--brand2),var(--brand));
-  color:#061020; font-weight:800; padding:10px 14px; border-radius:12px;
+  background: var(--grad);
+  color:#061020;
+  font-weight:900;
+  padding:10px 14px;
+  border-radius:14px;
+  box-shadow: 0 10px 30px rgba(31,111,235,.15);
 }
 .cta:hover{filter:brightness(1.03)}
 
@@ -38,83 +66,134 @@ a{color:inherit;text-decoration:none}
 }
 .panel{
   display:none;
-  position:absolute; top:44px; left:0;
-  min-width:260px;
-  background:rgba(15,26,46,.98);
+  position:absolute; top:46px; left:0;
+  min-width:280px;
+  background:rgba(15,27,51,.96);
   border:1px solid var(--border);
-  border-radius:14px;
+  border-radius:16px;
   padding:10px;
-  box-shadow: 0 18px 60px rgba(0,0,0,.45);
+  box-shadow: 0 22px 70px rgba(0,0,0,.55);
 }
 .panel a{
-  display:block; padding:10px 12px; border-radius:10px; color:var(--text)
+  display:block; padding:11px 12px; border-radius:12px; color:var(--text)
 }
 .panel a:hover{background:rgba(255,255,255,.06)}
 .drop.open .panel{display:block}
 
 .hero{
   position:relative;
-  min-height:78vh;
+  min-height:82vh;
   display:flex;
   align-items:center;
   border-bottom:1px solid var(--border);
-  background: radial-gradient(1200px 600px at 20% 20%, rgba(59,130,246,.18), transparent 60%),
-              radial-gradient(900px 500px at 80% 30%, rgba(49,196,141,.16), transparent 60%);
 }
-.hero-media{
-  position:absolute; inset:0; overflow:hidden;
-}
-.hero-media video, .hero-media img{
-  width:100%; height:100%; object-fit:cover;
-  filter:brightness(.55) saturate(1.05);
+.hero-media{position:absolute; inset:0; overflow:hidden}
+.hero-media video{
+  width:100%; height:100%;
+  object-fit:cover;
+  filter:brightness(.55) contrast(1.05) saturate(1.05);
 }
 .hero-overlay{
   position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(7,11,20,.35), rgba(7,11,20,.85));
+  background:
+    radial-gradient(900px 600px at 18% 22%, rgba(31,111,235,.22), transparent 60%),
+    radial-gradient(900px 600px at 82% 28%, rgba(49,196,141,.16), transparent 60%),
+    linear-gradient(180deg, rgba(7,11,20,.28), rgba(7,11,20,.92));
 }
-.hero-content{position:relative; padding:70px 0}
-.kicker{color:var(--muted); font-weight:700; letter-spacing:.18em; text-transform:uppercase; font-size:12px}
-.h1{font-size: clamp(36px, 4vw, 54px); line-height:1.05; margin:14px 0 14px; font-weight:900}
-.lead{max-width:720px; color:rgba(234,240,255,.86); font-size:18px; line-height:1.6}
+.hero-content{position:relative; padding:76px 0}
+.kicker{
+  color:rgba(234,241,255,.78);
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:12px
+}
+.h1{
+  font-size: clamp(38px, 4.6vw, 60px);
+  line-height:1.03;
+  margin:14px 0 12px;
+  font-weight:950;
+}
+.lead{
+  max-width:760px;
+  color:rgba(234,241,255,.86);
+  font-size:18px;
+  line-height:1.65;
+}
 .hero-actions{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap}
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
-  padding:12px 16px; border-radius:12px; font-weight:800;
-  border:1px solid var(--border);
+  padding:12px 16px; border-radius:14px; font-weight:900;
+  border:1px solid rgba(255,255,255,.14);
   background:rgba(255,255,255,.06);
 }
 .btn:hover{background:rgba(255,255,255,.10)}
 .btn.primary{
   border:0;
-  background:linear-gradient(90deg,var(--brand2),var(--brand));
+  background: var(--grad);
   color:#061020;
 }
+.btn.ghost{
+  background:transparent;
+}
 
-.section{padding:62px 0}
-.section h2{font-size:26px; margin:0 0 16px}
-.section p{color:rgba(234,240,255,.82); line-height:1.7}
+.section{padding:66px 0}
+.section h2{font-size:28px; margin:0 0 14px; font-weight:950}
+.section p{color:rgba(234,241,255,.82); line-height:1.75; margin:0 0 12px}
 
 .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:18px}
 .card{
-  background:rgba(15,26,46,.86);
-  border:1px solid var(--border);
-  border-radius:18px;
+  background:rgba(15,27,51,.78);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;
   padding:18px;
 }
-.card h3{margin:10px 0 8px; font-size:18px}
-.card p{margin:0; color:rgba(234,240,255,.78)}
-.tag{display:inline-flex; align-items:center; gap:8px; color:var(--muted); font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase}
+.card .tag{
+  display:inline-flex; align-items:center; gap:8px;
+  color:rgba(234,241,255,.70);
+  font-weight:850;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase
+}
+.card h3{margin:10px 0 8px; font-size:18px; font-weight:950}
+.card p{margin:0; color:rgba(234,241,255,.78)}
+.card .mini{margin-top:12px; color:rgba(234,241,255,.65); font-size:13px; line-height:1.6}
+
 .pills{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
-.pill{padding:10px 12px; border-radius:999px; border:1px solid var(--border); background:rgba(255,255,255,.04); color:rgba(234,240,255,.84); font-weight:700}
+.pill{
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.04);
+  color:rgba(234,241,255,.84);
+  font-weight:850;
+}
+
+.split{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap:18px;
+  margin-top:18px;
+}
+.box{
+  background:rgba(15,27,51,.65);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;
+  padding:18px;
+}
+.box h3{margin:0 0 10px; font-weight:950}
+.box ul{margin:0; padding-left:18px; color:rgba(234,241,255,.82); line-height:1.75}
 
 .footer{
   border-top:1px solid var(--border);
   padding:26px 0;
-  color:rgba(234,240,255,.62);
+  color:rgba(234,241,255,.62);
   font-size:14px;
 }
 
-@media (max-width: 860px){
+@media (max-width: 920px){
   .grid3{grid-template-columns:1fr}
-  .menu{display:none} /* 先简化：移动端你要的话我再加汉堡菜单 */
+  .split{grid-template-columns:1fr}
+  .menu{display:none} /* 先简化移动端；你要汉堡菜单我再给 */
 }
