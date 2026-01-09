@@ -1,4 +1,3 @@
-// dropdown toggle
 document.addEventListener("click", (e) => {
   const drop = e.target.closest(".drop");
   document.querySelectorAll(".drop").forEach(d => {
