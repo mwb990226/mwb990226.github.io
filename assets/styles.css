@@ -447,4 +447,21 @@ hr{border:0;border-top:1px solid var(--border); margin:28px 0}
     margin-top: 10px;
   }
 }
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+}
+
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:28px;           /* 控制左边菜单间距 */
+}
+
+.nav-right{
+  display:flex;
+  align-items:center;
+}
 
