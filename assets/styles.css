@@ -228,3 +228,140 @@ a{ color:inherit; text-decoration:none }
 @media (max-width:920px){
   .menu{ display:none }
 }
+/* =====================================================
+   FOOTER — FINAL FIX (GRID RESTORED)
+   ===================================================== */
+
+.site-footer{
+  background: linear-gradient(180deg, rgba(11,19,36,.55), rgba(7,11,20,1));
+  border-top:1px solid rgba(255,255,255,.10);
+}
+
+.footer-inner{
+  padding:56px 0 48px;
+}
+
+.footer-top{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1.35fr;
+  gap:26px;
+  align-items:start;
+}
+
+/* 普通列 */
+.footer-col a{
+  display:block;
+  padding:7px 0;
+  color:rgba(234,241,255,.72);
+  font-weight:650;
+}
+.footer-col a:hover{
+  color:rgba(234,241,255,.92);
+}
+
+.footer-title{
+  color:rgba(234,241,255,.92);
+  font-weight:900;
+  font-size:13px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+/* 右侧 Follow / Newsletter 独立列 */
+.footer-col-wide{
+  grid-column:5;
+  padding-left:18px;
+  border-left:1px solid rgba(255,255,255,.10);
+}
+
+.footer-note{
+  max-width:320px;
+  color:rgba(234,241,255,.62);
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* 社交图标 */
+.footer-social{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+.social{
+  width:36px;
+  height:36px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.05);
+  color:rgba(234,241,255,.86);
+  font-weight:900;
+}
+.social:hover{
+  background:rgba(255,255,255,.10);
+  border-color:rgba(255,255,255,.22);
+}
+
+/* Newsletter */
+.footer-form{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap:12px;
+  margin-top:12px;
+  align-items:stretch;
+}
+.footer-form input{
+  height:44px;
+  padding:0 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.04);
+  color:var(--text);
+}
+.footer-form button{
+  height:44px;
+  padding:0 16px;
+  border-radius:14px;
+  border:0;
+  background:var(--grad);
+  color:#061020;
+  font-weight:950;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+/* 底部版权线 */
+.footer-bottomline{
+  margin-top:26px;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.10);
+  color:rgba(234,241,255,.52);
+  font-size:13px;
+}
+.footer-bottomline a{
+  color:rgba(234,241,255,.65);
+}
+.footer-bottomline a:hover{
+  color:rgba(234,241,255,.90);
+}
+
+/* =========================
+   FOOTER — MOBILE
+   ========================= */
+@media (max-width:980px){
+  .footer-top{
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-col-wide{
+    grid-column:1 / -1;
+    padding-left:0;
+    border-left:0;
+    margin-top:12px;
+  }
+  .footer-note{
+    max-width:none;
+  }
+}
