@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News | EditVerity Sciences</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+
+  <!-- 你站点如果有统一 header（nav）组件，建议复制 index.html 里的 header 到这里 -->
+  <main class="container" style="padding: 64px 0;">
+    <h1 style="margin:0 0 12px;">News</h1>
+    <p style="opacity:.85; max-width: 760px;">
+      Company milestones, announcements, and updates.
+    </p>
+
+    <div style="margin-top:28px; display:grid; gap:16px; max-width: 900px;">
+      <article class="card" style="padding:20px;">
+        <div style="display:flex; gap:12px; align-items:baseline; justify-content:space-between; flex-wrap:wrap;">
+          <h2 style="margin:0; font-size:20px;">EditVerity Sciences, Inc. Officially Incorporated</h2>
+          <div style="opacity:.75;">Jan 13, 2026</div>
+        </div>
+        <p style="margin:12px 0 0; opacity:.9; line-height:1.6;">
+          EditVerity Sciences, Inc. is officially incorporated in the United States.
+          We are building regulatory-grade genome editing outcome analysis and safety validation to help programs move from discovery to IND with confidence.
+        </p>
+        <p style="margin:12px 0 0; opacity:.9; line-height:1.6;">
+          Contact: <a href="mailto:contact@editverity.com">contact@editverity.com</a>
+        </p>
+      </article>
+    </div>
+  </main>
+
+  <!-- 你站点如果有统一 footer，建议复制 index.html 里的 footer 到这里 -->
+</body>
+</html>
