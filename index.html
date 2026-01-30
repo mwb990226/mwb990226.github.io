@@ -6,8 +6,14 @@
   <title>EditVerity Sciences, Inc.</title>
   <link rel="icon" href="/assets/logo.png" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <meta name="description" content="IND-aligned genome editing outcome analysis: rare outcomes, error-suppressed sequencing, and interpretation." />
+  <meta name="description" content="Regulatory-aligned genome editing safety infrastructure: rare outcome detection, error-suppressed sequencing, and outcome interpretation across DNA, RNA, and cellular layers." />
+
+  <!-- Optional: Open Graph (helps when reviewers share internally) -->
+  <meta property="og:title" content="EditVerity Sciences" />
+  <meta property="og:description" content="We build safety infrastructure to detect and interpret rare, unintended genome editing outcomes for IND-enabling decisions." />
+  <meta property="og:type" content="website" />
 </head>
+
 <body>
   <header class="nav">
     <div class="container nav-inner">
@@ -23,28 +29,31 @@
         <a href="/">Home</a>
 
         <div class="drop">
-          <button type="button">Services ▾</button>
+          <button type="button" aria-haspopup="true" aria-expanded="false">Capabilities ▾</button>
           <div class="panel">
-            <a href="#services">Rare outcome enrichment</a>
-            <a href="#services">Error-suppressed sequencing</a>
-            <a href="#services">Outcome interpretation</a>
+            <a href="#capabilities">Rare outcome detection</a>
+            <a href="#capabilities">Error-suppressed sequencing</a>
+            <a href="#capabilities">Outcome interpretation</a>
+            <a href="#capabilities">Longitudinal tracking</a>
           </div>
         </div>
 
         <div class="drop">
-          <button type="button">Use cases ▾</button>
+          <button type="button" aria-haspopup="true" aria-expanded="false">Use cases ▾</button>
           <div class="panel">
-            <a href="#usecases">IND-enabling safety</a>
-            <a href="#usecases">Unintended outcomes</a>
-            <a href="#usecases">Genome-wide characterization</a>
+            <a href="#usecases">IND / pre-IND readiness</a>
+            <a href="#usecases">Ex vivo editing programs</a>
+            <a href="#usecases">In vivo editing programs</a>
+            <a href="#usecases">Modality benchmarking</a>
           </div>
         </div>
 
-        <a href="#about">About</a>
-        
-      <a href="/news.html">News</a>
+        <a href="#why">Why it matters</a>
+        <a href="#team">Team</a>
+        <a href="/news.html">News</a>
 
-      <a class="cta" href="#contact">Talk to us</a>
+        <a class="cta" href="#contact">Talk to us</a>
+      </nav>
     </div>
   </header>
 
@@ -56,57 +65,134 @@
       <div class="hero-overlay"></div>
 
       <div class="container hero-content">
-        <div class="kicker">Outcome intelligence for genome editing</div>
-        <div class="h1">See what edits actually produce — at IND depth.</div>
+        <div class="kicker">Safety infrastructure for genome editing</div>
+
+        <div class="h1">Detect rare, unintended outcomes — and translate them into decision-ready safety signals.</div>
+
         <p class="lead">
-          EditVerity combines <b>rare outcome enrichment</b>, <b>error-suppressed sequencing</b>,
-          and <b>regulatory-aligned interpretation</b> to reveal rare and unintended editing outcomes
-          that standard assays miss.
+          EditVerity builds <b>regulatory-aligned safety infrastructure</b> to reveal low-frequency and complex genome editing outcomes
+          (rare indels, large deletions, inversions, translocations, chromothripsis-like events) that standard assays often miss.
+          We pair detection with <b>interpretation</b> across DNA, RNA, and cellular layers for <b>IND-enabling decisions</b>.
         </p>
+
         <div class="hero-actions">
-          <a class="btn primary" href="#contact">Request a consult</a>
-          <a class="btn" href="#services">Explore capabilities</a>
-          <a class="btn ghost" href="#usecases">IND use cases</a>
+          <a class="btn primary" href="#contact">Request a discussion</a>
+          <a class="btn" href="#why">See the problem → solution</a>
+          <a class="btn ghost" href="#capabilities">Explore capabilities</a>
+        </div>
+
+        <!-- Reviewer-friendly, non-confidential positioning -->
+        <div class="pills" style="margin-top:14px;">
+          <span class="pill">Non-confidential overview</span>
+          <span class="pill">Ex vivo &amp; in vivo programs</span>
+          <span class="pill">Rare event detection</span>
+          <span class="pill">Longitudinal safety</span>
         </div>
       </div>
     </section>
 
-    <section id="services" class="section">
+    <!-- Problem -> Solution -> Impact (JLABS-friendly narrative) -->
+    <section id="why" class="section">
       <div class="container">
-        <h2>Capabilities</h2>
+        <h2>Why it matters</h2>
         <p>
-          We help genome editing teams move from “intended edit confirmed” to “outcome landscape understood”
-          — with sensitivity, confidence, and reporting that supports development decisions.
+          Genome editing is rapidly advancing across ex vivo and in vivo therapeutic programs, but <b>safety assessment is now a dominant bottleneck</b>.
+          Existing approaches often provide an incomplete view of genome-wide outcomes, especially for <b>rare, complex, and delayed</b> events that can shape
+          clonal behavior and long-term stability.
         </p>
 
         <div class="grid3">
           <div class="card">
-            <div class="tag">Capability</div>
-            <h3>Rare outcome enrichment</h3>
-            <p>Increase signal for ultra-low frequency outcomes and complex repair products.</p>
-            <div class="mini">Best for: low VAF events, mosaic edits, rare rearrangements.</div>
+            <div class="tag">Problem</div>
+            <h3>Snapshot safety is incomplete</h3>
+            <p>
+              Many standard assays emphasize predicted or partial off-target signals and can miss low-frequency, high-impact outcomes.
+            </p>
+            <div class="mini">Result: uncertainty in IND-enabling studies and early clinical translation.</div>
           </div>
 
           <div class="card">
-            <div class="tag">Capability</div>
+            <div class="tag">Solution</div>
+            <h3>Rare outcome visibility + interpretation</h3>
+            <p>
+              We focus on detecting rare and complex editing outcomes and connecting them to biologically meaningful, decision-ready signals.
+            </p>
+            <div class="mini">Result: clearer risk attribution and mechanistic context.</div>
+          </div>
+
+          <div class="card">
+            <div class="tag">Impact</div>
+            <h3>Regulatory-aligned decision support</h3>
+            <p>
+              Our infrastructure is designed to help teams answer practical questions: what happened, how confident are we, and what does it mean for development?
+            </p>
+            <div class="mini">Result: stronger, more interpretable safety packages.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities" class="section">
+      <div class="container">
+        <h2>Capabilities</h2>
+        <p>
+          We help genome editing teams move from “intended edit confirmed” to “outcome landscape understood” with
+          <b>rare-event sensitivity</b>, <b>artifact control</b>, and <b>regulatory-relevant interpretation</b>.
+        </p>
+
+        <div class="grid3">
+          <div class="card">
+            <div class="tag">Core</div>
+            <h3>Rare outcome detection</h3>
+            <p>Strategies to increase visibility for ultra-low frequency outcomes and complex repair products.</p>
+            <div class="mini">Best for: rare indels, large deletions, inversions, translocations, complex rearrangements.</div>
+          </div>
+
+          <div class="card">
+            <div class="tag">Core</div>
             <h3>Error-suppressed sequencing</h3>
-            <p>Distinguish true variants from PCR and sequencing artifacts.</p>
-            <div class="mini">Best for: confident calls at the limits of detection.</div>
+            <p>Reduce PCR/sequencing artifacts to enable confident calling at the limits of detection.</p>
+            <div class="mini">Best for: low VAF events, mosaic edits, sensitivity benchmarking.</div>
           </div>
 
           <div class="card">
-            <div class="tag">Capability</div>
+            <div class="tag">Core</div>
             <h3>Outcome interpretation</h3>
-            <p>Convert data into IND-relevant insights and decision-ready summaries.</p>
-            <div class="mini">Best for: safety packages, development readouts, partner reports.</div>
+            <p>Convert results into development-facing summaries aligned to safety questions and decision needs.</p>
+            <div class="mini">Best for: IND-enabling packages, partner diligence, internal modality selection.</div>
+          </div>
+        </div>
+
+        <!-- Add the missing “infrastructure” feel -->
+        <div class="grid3" style="margin-top:16px;">
+          <div class="card">
+            <div class="tag">Add-on</div>
+            <h3>Longitudinal tracking</h3>
+            <p>Track outcomes across time to assess stability, selection, and clonal dynamics.</p>
+            <div class="mini">Best for: delayed risk, clonal expansion, durability questions.</div>
+          </div>
+
+          <div class="card">
+            <div class="tag">Add-on</div>
+            <h3>Multi-layer context</h3>
+            <p>Coordinate outcome signals with transcript-level or cellular readouts when needed for interpretation.</p>
+            <div class="mini">Best for: linking rare genomic events to functional consequences.</div>
+          </div>
+
+          <div class="card">
+            <div class="tag">Add-on</div>
+            <h3>Benchmarking &amp; comparability</h3>
+            <p>Support controlled comparisons across modalities, delivery strategies, and conditions.</p>
+            <div class="mini">Best for: platform selection, optimization, and program risk mapping.</div>
           </div>
         </div>
 
         <div class="pills">
-          <span class="pill">IND-enabling outcome analysis</span>
-          <span class="pill">Unintended edits & rearrangements</span>
-          <span class="pill">Genome-wide characterization</span>
-          <span class="pill">CRO-ready turnaround</span>
+          <span class="pill">IND-enabling safety</span>
+          <span class="pill">Rare &amp; complex outcomes</span>
+          <span class="pill">Longitudinal assessment</span>
+          <span class="pill">Regulatory-aligned interpretation</span>
+          <!-- Removed: "CRO-ready turnaround" (can make you look like a CRO) -->
         </div>
       </div>
     </section>
@@ -114,26 +200,92 @@
     <section id="usecases" class="section">
       <div class="container">
         <h2>Where we help</h2>
-        <p>From early discovery to IND enablement, we clarify outcome risk and mechanism.</p>
+        <p>From discovery to IND enablement, we clarify outcome risk, mechanism, and decision relevance.</p>
 
         <div class="split">
           <div class="box">
             <h3>IND / pre-IND readiness</h3>
             <ul>
-              <li>Outcome landscape characterization and rare event sensitivity</li>
-              <li>Unintended edits: complex indels, inversions, translocations</li>
-              <li>Clear interpretation aligned to regulatory questions</li>
+              <li>Outcome landscape characterization with rare-event sensitivity</li>
+              <li>Unintended outcomes: complex indels, inversions, translocations, large deletions</li>
+              <li>Interpretation aligned to safety questions and development decisions</li>
             </ul>
           </div>
 
           <div class="box">
-            <h3>R&amp;D and platform development</h3>
+            <h3>Ex vivo &amp; in vivo programs</h3>
             <ul>
-              <li>DNA repair mechanism readouts and editing optimization</li>
-              <li>Benchmarking editing modalities and delivery strategies</li>
-              <li>Comparative outcome profiling across conditions</li>
+              <li>Ex vivo edited cell products: rare events and longitudinal stability</li>
+              <li>In vivo editing: sparse/heterogeneous outcomes and interpretability</li>
+              <li>Comparative profiling across modalities (CRISPR, base editing, prime editing)</li>
             </ul>
           </div>
+        </div>
+
+        <!-- Optional: anonymized examples without any client/confidential details -->
+        <div class="split" style="margin-top:14px;">
+          <div class="box">
+            <h3>Illustrative outcomes (non-confidential)</h3>
+            <ul>
+              <li>Detect rare structural outcomes that are not captured by snapshot assays</li>
+              <li>Distinguish true low-frequency variants from artifacts at the limits of detection</li>
+              <li>Translate outcome profiles into “what it means” for program decisions</li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <h3>What we are not</h3>
+            <ul>
+              <li>Not a general-purpose CRO</li>
+              <li>Not limited to predicted off-target lists</li>
+              <li>Not a single-assay report — we build safety measurement infrastructure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add Team (JLABS cares about people) -->
+    <section id="team" class="section">
+      <div class="container">
+        <h2>Team</h2>
+        <p>
+          Our founding team combines genome editing innovation, genome stability expertise, and in vivo biology to build a system-level safety platform.
+        </p>
+
+        <div class="grid3">
+          <div class="card">
+            <div class="tag">Co-Founder &amp; Scientific Advisor</div>
+            <h3>Xingxu Huang, Ph.D.</h3>
+            <p>
+              Pioneer in genome editing and precision gene therapy; established end-to-end CRISPR editing frameworks across model systems and primary cells,
+              and contributed to high-fidelity editing systems and next-generation editors.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="tag">Founder &amp; CEO</div>
+            <h3>Wubin Ma, Ph.D.</h3>
+            <p>
+              Expertise in genome stability, chromatin organization, and rare genome rearrangements; leads development of rare-variant detection technologies
+              forming the company’s core IP.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="tag">Co-Founder &amp; Head of Biology</div>
+            <h3>Chunyu Jin, Ph.D.</h3>
+            <p>
+              Expertise in transcriptional regulation, epigenetics, and in vivo biology; supports functional interpretation of rare events through biological context.
+            </p>
+          </div>
+        </div>
+
+        <div class="pills" style="margin-top:14px;">
+          <span class="pill">Genome editing</span>
+          <span class="pill">Genome stability</span>
+          <span class="pill">Transcription &amp; epigenetics</span>
+          <span class="pill">In vivo biology</span>
         </div>
       </div>
     </section>
@@ -143,7 +295,11 @@
         <h2>About</h2>
         <p>
           EditVerity Sciences, Inc. was founded to close a critical bottleneck in genome editing:
-          understanding what edits actually produce, with depth and accuracy suitable for translational decisions.
+          building the <b>measurement infrastructure</b> needed to detect and interpret rare, unintended outcomes
+          with depth suitable for translational and regulatory decision-making.
+        </p>
+        <p class="mini" style="margin-top:10px;">
+          Note: This website contains non-confidential information intended for scientific and business overview purposes.
         </p>
       </div>
     </section>
@@ -152,73 +308,69 @@
       <div class="container">
         <h2>Contact</h2>
         <p>
-          Tell us your editing modality, target, and development stage. We’ll propose a practical outcome visibility plan.
+          Tell us your editing modality, setting (ex vivo vs in vivo), and development stage. We’ll propose a practical outcome visibility plan.
         </p>
         <div class="hero-actions">
           <a class="btn primary" href="mailto:contact@editverity.com">Email contact@editverity.com</a>
-          <a class="btn" href="mailto:contact@editverity.com?subject=EditVerity%20Consult%20Request">Start a consult</a>
+          <a class="btn" href="mailto:contact@editverity.com?subject=EditVerity%20Discussion%20Request">Start a discussion</a>
         </div>
       </div>
     </section>
 
-   
     <footer class="site-footer">
-  <div class="container footer-inner">
+      <div class="container footer-inner">
+        <div class="footer-top">
+          <div class="footer-col">
+            <div class="footer-title">We are ready to help</div>
+            <a href="#contact">Request a discussion</a>
+            <a href="#capabilities">Capabilities</a>
+            <a href="#usecases">Use cases</a>
+          </div>
 
-    <div class="footer-top">
-     
+          <div class="footer-col">
+            <div class="footer-title">Company</div>
+            <a href="#about">About EditVerity</a>
+            <a href="#team">Team</a>
+            <a href="/news.html">News</a>
+          </div>
 
-      <div class="footer-col">
-        <div class="footer-title">We are ready to help</div>
-        <a href="#contact">Order support</a>
-        <a href="#contact">Product technical support</a>
-        <a href="#services">Resources</a>
-      </div>
+          <div class="footer-col">
+            <div class="footer-title">Policies</div>
+            <a href="/privacy">Privacy policy</a>
+            <a href="/terms">Website Terms of Use</a>
+          </div>
 
-      <div class="footer-col">
-        <div class="footer-title">Products and Services</div>
-        <a href="#services">Capabilities</a>
-        <a href="#usecases">Use cases</a>
-        <a href="#contact">Services</a>
-      </div>
+          <div class="footer-col footer-col-wide">
+            <div class="footer-title">Follow us</div>
+            <div class="footer-social">
+              <a class="social" href="https://www.linkedin.com" target="_blank" rel="noopener">in</a>
+              <a class="social" href="https://x.com" target="_blank" rel="noopener">X</a>
+            </div>
 
-      <div class="footer-col">
-        <div class="footer-title">Policies</div>
-        <a href="/privacy">Privacy policy</a>
-        <a href="/terms">Website Terms of Use</a>
-      </div>
+            <div class="footer-title" style="margin-top:18px;">Newsletter</div>
+            <div class="footer-note">
+              Keep up to date with our events and research updates.
+            </div>
 
-      <div class="footer-col">
-        <div class="footer-title">About us</div>
-        <a href="#about">About EditVerity</a>
-        <a href="#contact">Contact us</a>
-      </div>
+            <form class="footer-form" onsubmit="return false;">
+              <input type="email" placeholder="Enter your email" />
+              <button type="submit">Sign Up</button>
+            </form>
 
-      <div class="footer-col footer-col-wide">
-        <div class="footer-title">Follow us</div>
-        <div class="footer-social">
-          <a class="social" href="https://www.linkedin.com" target="_blank">in</a>
-          <a class="social" href="https://x.com" target="_blank">X</a>
+            <div class="mini" style="margin-top:12px;">
+              © <span id="y"></span> EditVerity Sciences, Inc.
+            </div>
+          </div>
         </div>
-
-        <div class="footer-title" style="margin-top:18px;">Newsletter</div>
-        <div class="footer-note">
-          Keep up to date with our events and research updates.
-        </div>
-
-        <form class="footer-form" onsubmit="return false;">
-          <input type="email" placeholder="Enter your email" />
-          <button type="submit">Sign Up</button>
-        </form>
-
       </div>
-    </div>
-
-  </div>
-</footer> 
+    </footer>
   </main>
 
   <script src="/assets/script.js"></script>
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script>
+    // Fix: previously #y did not exist
+    var y = document.getElementById("y");
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
