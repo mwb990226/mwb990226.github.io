@@ -482,3 +482,80 @@ a{ color:inherit; text-decoration:none; }
 .pill{
   font-size: 14px;
 }
+
+/* =====================================================
+   FULL-WIDTH + READABILITY PATCH (ATCC-scale)
+   Paste at END of styles.css
+   ===================================================== */
+
+/* 1) 全站字体基线抬起来（暗色背景更需要大一点） */
+html { font-size: 16px; }
+body {
+  font-size: 16.5px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 2) 核心：把内容容器从 1120 提升到更“官网”的尺度 */
+.container{
+  width: min(1320px, 92vw);
+  margin: 0 auto;
+  padding: 0 28px; /* 增加左右留白，宽屏更“稳” */
+}
+
+/* 3) 让“背景/区块”真正全宽（你已有，但这里更保险） */
+.section,
+.hero,
+.site-footer{
+  width: 100%;
+}
+
+/* 4) 文本可读性：段落最大行宽稍微放大（你原来900有点偏窄） */
+.section p{
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 980px;
+  color: rgba(234,241,255,.86);
+}
+
+/* 5) Hero 的 lead 也放大一点（官网感来自 hero 字号和宽度） */
+.lead{
+  font-size: 19px;
+  line-height: 1.7;
+  max-width: 860px;
+}
+
+/* 6) 标题再抬一点点（但不夸张，保持你“冷静专业”） */
+.h1{
+  font-size: clamp(42px, 4.8vw, 66px);
+}
+.section h2{
+  font-size: clamp(30px, 3vw, 36px);
+}
+
+/* 7) 卡片正文略抬：你现在 card p 16.6 ok，但宽屏更需要一点重量 */
+.card p{
+  font-size: 16.8px;
+  line-height: 1.75;
+  color: rgba(234,241,255,.86);
+}
+.mini{
+  font-size: 14.8px;
+  line-height: 1.65;
+}
+
+/* 8) 超宽屏（>=1440）再给一点“铺满感” */
+@media (min-width: 1440px){
+  .container{ width: min(1400px, 92vw); }
+  .section{ padding: 86px 0; }
+  .hero-content{ padding: 88px 0; }
+}
+
+/* 9) 小屏不要太挤 */
+@media (max-width: 980px){
+  body{ font-size: 16px; }
+  .container{ padding: 0 18px; }
+  .lead{ font-size: 17px; }
+}
+
