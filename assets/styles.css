@@ -448,3 +448,37 @@ a{ color:inherit; text-decoration:none; }
   .menu{ display:none; }
   .hero{ min-height:76vh; }
 }
+/* =====================================================
+   TYPOGRAPHY SCALE UP – CORE CONTENT
+   Safe global adjustment for readability
+   ===================================================== */
+
+/* Section titles */
+.section h2{
+  font-size: clamp(30px, 3vw, 32px);
+  line-height: 1.25;
+}
+
+/* Capability / Extension card titles */
+.card h3{
+  font-size: 19.5px;
+  line-height: 1.35;
+}
+
+/* Main card body text */
+.card p{
+  font-size: 16.6px;
+  line-height: 1.72;
+  color: rgba(234,241,255,.86);
+}
+
+/* Supporting text (mini / typical applications) */
+.mini{
+  font-size: 14.6px;
+  line-height: 1.6;
+}
+
+/* Pills (tags at bottom) */
+.pill{
+  font-size: 14px;
+}
