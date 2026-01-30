@@ -19,17 +19,33 @@
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
 
+html{
+  font-size:16px;
+}
+
 body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  font-size:16.5px;
+  line-height:1.65;
   color:var(--text);
   background:
     radial-gradient(1200px 700px at 15% 10%, rgba(31,111,235,.18), transparent 55%),
     radial-gradient(1000px 650px at 85% 20%, rgba(49,196,141,.14), transparent 55%),
     var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a{ color:inherit; text-decoration:none; }
-.container{ width:min(1120px, 92vw); margin:0 auto; }
+
+/* =====================================================
+   LAYOUT WIDTH — ENTERPRISE SCALE
+   ===================================================== */
+.container{
+  width: min(1360px, 92vw);
+  margin: 0 auto;
+  padding: 0 28px;
+}
 
 /* =====================================================
    BRAND
@@ -47,87 +63,100 @@ a{ color:inherit; text-decoration:none; }
   flex-direction:column;
   line-height:1.05;
 }
-.brand-main{ font-size:20px; font-weight:900; letter-spacing:.4px; }
+.brand-main{
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:.4px;
+}
 .brand-sub{
-  font-size:11px;
+  font-size:12px;
   font-weight:800;
-  letter-spacing:.32em;
+  letter-spacing:.28em;
   text-transform:uppercase;
-  opacity:.8;
+  opacity:.9;
 }
 
 /* =====================================================
-   NAVIGATION
+   NAVIGATION — FIXED SIZE (LIKE ATCC)
    ===================================================== */
 .nav{
   position:sticky;
   top:0;
   z-index:50;
-  background:rgba(7,11,20,.72);
+  background:rgba(7,11,20,.78);
   backdrop-filter: blur(10px);
   border-bottom:1px solid var(--border);
 }
+
 .nav-inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:14px 0;
-  gap:18px;
+  padding:16px 0;
+  gap:22px;
 }
+
 .menu{
   flex:1;
   display:flex;
   align-items:center;
-  gap:18px;
-  margin-left:24px;
+  gap:20px;
+  margin-left:28px;
+  font-size:16.5px;
   font-weight:650;
-  color:rgba(234,241,255,.82);
+  color:rgba(234,241,255,.88);
 }
 
 .menu > a,
 .menu > .drop > button{
-  padding:10px 12px;
-  border-radius:12px;
+  padding:12px 14px;
+  border-radius:14px;
   border:1px solid transparent;
   background:transparent;
   color:inherit;
   font:inherit;
   cursor:pointer;
+  line-height:1.1;
 }
+
 .menu > a:hover,
 .menu > .drop > button:hover{
   background:rgba(255,255,255,.06);
   border-color:rgba(255,255,255,.10);
 }
+
 .menu .cta{
   margin-left:auto;
   background:var(--grad);
   color:#061020;
   font-weight:900;
-  padding:10px 16px;
-  border-radius:14px;
-  box-shadow:0 10px 30px rgba(31,111,235,.15);
+  font-size:16.5px;
+  padding:12px 18px;
+  border-radius:16px;
+  box-shadow:0 12px 34px rgba(31,111,235,.18);
 }
 .menu .cta:hover{ filter:brightness(1.05); }
 
 /* Dropdown */
 .drop{ position:relative; }
 .drop button{ display:flex; gap:6px; align-items:center; }
+
 .panel{
   display:none;
   position:absolute;
-  top:46px; left:0;
-  min-width:260px;
+  top:52px; left:0;
+  min-width:280px;
   background:rgba(15,27,51,.96);
   border:1px solid var(--border);
-  border-radius:16px;
+  border-radius:18px;
   padding:10px;
   box-shadow:0 22px 70px rgba(0,0,0,.55);
 }
 .panel a{
   display:block;
-  padding:11px 12px;
-  border-radius:12px;
+  padding:12px 14px;
+  border-radius:14px;
+  font-size:15.5px;
 }
 .panel a:hover{ background:rgba(255,255,255,.06); }
 .drop:hover .panel{ display:block; }
@@ -143,57 +172,63 @@ a{ color:inherit; text-decoration:none; }
   border-bottom:1px solid var(--border);
   overflow:hidden;
 }
+
 .hero-media{
   position:absolute;
   inset:0;
   z-index:0;
-  overflow:hidden;
 }
-.hero-media video,
-.hero-media img{
+.hero-media img,
+.hero-media video{
   width:100%;
   height:100%;
   object-fit:cover;
   filter:brightness(.78) contrast(1.1) saturate(1.18);
 }
+
 .hero-overlay{
   position:absolute;
   inset:0;
   z-index:1;
   background:
-    radial-gradient(900px 620px at 70% 45%, rgba(255, 80, 80, .10), transparent 62%),
+    radial-gradient(900px 620px at 70% 45%, rgba(255, 80, 80, .12), transparent 62%),
     radial-gradient(900px 600px at 18% 22%, rgba(31,111,235,.18), transparent 60%),
     radial-gradient(900px 600px at 82% 28%, rgba(49,196,141,.12), transparent 60%),
-    linear-gradient(180deg, rgba(7,11,20,.20), rgba(7,11,20,.72));
+    linear-gradient(180deg, rgba(7,11,20,.18), rgba(7,11,20,.78));
 }
+
 .hero-content{
   position:relative;
   z-index:2;
-  padding:76px 0;
+  padding:88px 0;
 }
+
 .kicker{
   color:rgba(234,241,255,.78);
   font-weight:800;
   letter-spacing:.18em;
   text-transform:uppercase;
-  font-size:12px;
+  font-size:12.5px;
 }
+
 .h1{
-  font-size:clamp(38px, 4.6vw, 60px);
+  font-size:clamp(44px, 4.8vw, 66px);
   line-height:1.03;
-  margin:14px 0 12px;
+  margin:16px 0 14px;
   font-weight:950;
 }
+
 .lead{
-  max-width:760px;
-  color:rgba(234,241,255,.86);
-  font-size:18px;
-  line-height:1.65;
+  max-width:860px;
+  color:rgba(234,241,255,.88);
+  font-size:19px;
+  line-height:1.7;
 }
+
 .hero-actions{
   display:flex;
-  gap:12px;
-  margin-top:22px;
+  gap:14px;
+  margin-top:26px;
   flex-wrap:wrap;
 }
 
@@ -204,41 +239,41 @@ a{ color:inherit; text-decoration:none; }
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:12px 16px;
-  border-radius:14px;
+  padding:13px 18px;
+  border-radius:16px;
   font-weight:900;
   border:1px solid rgba(255,255,255,.14);
   background:rgba(255,255,255,.06);
 }
 .btn:hover{ background:rgba(255,255,255,.10); }
+
 .btn.primary{
   border:0;
   background:var(--grad);
   color:#061020;
 }
-.btn.ghost{
-  background:transparent;
-}
+.btn.ghost{ background:transparent; }
 
 /* =====================================================
    PAGE SECTIONS
    ===================================================== */
 .section{
-  padding:72px 0;
+  padding:86px 0;
   border-bottom:1px solid var(--border);
 }
+
 .section h2{
-  margin:0 0 12px;
-  font-size:28px;
+  margin:0 0 14px;
+  font-size:clamp(30px, 3vw, 36px);
   font-weight:950;
-  letter-spacing:.2px;
 }
+
 .section p{
-  margin:0 0 18px;
-  color:rgba(234,241,255,.80);
-  line-height:1.75;
-  font-size:16px;
-  max-width:900px;
+  margin:0 0 22px;
+  color:rgba(234,241,255,.86);
+  line-height:1.8;
+  font-size:17px;
+  max-width:980px;
 }
 
 /* =====================================================
@@ -247,28 +282,32 @@ a{ color:inherit; text-decoration:none; }
 .grid3{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
-  gap:16px;
-  margin-top:18px;
+  gap:18px;
+  margin-top:22px;
 }
+
 .card{
   background:rgba(15,27,51,.72);
   border:1px solid rgba(255,255,255,.10);
-  border-radius:18px;
-  padding:18px 18px 16px;
+  border-radius:20px;
+  padding:20px;
   box-shadow:0 18px 60px rgba(0,0,0,.35);
 }
+
 .card h3{
   margin:10px 0 8px;
-  font-size:18px;
+  font-size:19.5px;
   font-weight:900;
-  line-height:1.25;
+  line-height:1.3;
 }
+
 .card p{
-  margin:0 0 10px;
-  color:rgba(234,241,255,.78);
-  font-size:15px;
-  line-height:1.7;
+  margin:0 0 12px;
+  font-size:16.8px;
+  line-height:1.75;
+  color:rgba(234,241,255,.86);
 }
+
 .tag{
   display:inline-flex;
   align-items:center;
@@ -280,12 +319,6 @@ a{ color:inherit; text-decoration:none; }
   font-weight:900;
   letter-spacing:.10em;
   text-transform:uppercase;
-  color:rgba(234,241,255,.82);
-}
-.mini{
-  font-size:13px;
-  line-height:1.55;
-  color:rgba(234,241,255,.62);
 }
 
 /* =====================================================
@@ -293,51 +326,29 @@ a{ color:inherit; text-decoration:none; }
    ===================================================== */
 .split{
   display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:16px;
-  margin-top:18px;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:22px;
 }
+
 .box{
   background:rgba(11,19,36,.55);
   border:1px solid rgba(255,255,255,.10);
-  border-radius:18px;
-  padding:18px;
+  border-radius:20px;
+  padding:20px;
 }
+
 .box h3{
-  margin:0 0 10px;
-  font-size:18px;
+  margin:0 0 12px;
+  font-size:18.5px;
   font-weight:900;
 }
-.box ul{
-  margin:0;
-  padding-left:18px;
-}
+
 .box li{
   margin:6px 0;
   color:rgba(234,241,255,.78);
   line-height:1.7;
-  font-size:15px;
-}
-
-/* =====================================================
-   PILLS
-   ===================================================== */
-.pills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:18px;
-}
-.pill{
-  display:inline-flex;
-  align-items:center;
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.04);
-  color:rgba(234,241,255,.74);
-  font-weight:750;
-  font-size:13px;
+  font-size:15.8px;
 }
 
 /* =====================================================
@@ -347,86 +358,21 @@ a{ color:inherit; text-decoration:none; }
   background: linear-gradient(180deg, rgba(11,19,36,.55), rgba(7,11,20,1));
   border-top:1px solid rgba(255,255,255,.10);
 }
-.footer-inner{ padding:56px 0 48px; }
+
+.footer-inner{ padding:64px 0 52px; }
+
 .footer-top{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1.35fr;
-  gap:26px;
-  align-items:start;
+  gap:28px;
 }
-.footer-col a{
-  display:block;
-  padding:7px 0;
-  color:rgba(234,241,255,.72);
-  font-weight:650;
-}
-.footer-col a:hover{
-  color:rgba(234,241,255,.92);
-}
+
 .footer-title{
-  color:rgba(234,241,255,.92);
   font-weight:900;
   font-size:13px;
   letter-spacing:.14em;
   text-transform:uppercase;
-  margin-bottom:10px;
-}
-.footer-col-wide{
-  padding-left:18px;
-  border-left:1px solid rgba(255,255,255,.10);
-}
-.footer-note{
-  max-width:320px;
-  color:rgba(234,241,255,.62);
-  font-size:14px;
-  line-height:1.6;
-}
-.footer-social{
-  display:flex;
-  gap:10px;
-  margin-top:10px;
-}
-.social{
-  width:36px;
-  height:36px;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid rgba(255,255,255,.16);
-  background:rgba(255,255,255,.05);
-  color:rgba(234,241,255,.86);
-  font-weight:900;
-}
-.social:hover{
-  background:rgba(255,255,255,.10);
-  border-color:rgba(255,255,255,.22);
-}
-.footer-form{
-  display:grid;
-  grid-template-columns: 1fr auto;
-  gap:12px;
-  margin-top:12px;
-  align-items:stretch;
-}
-.footer-form input{
-  height:44px;
-  padding:0 14px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.04);
-  color:var(--text);
-}
-.footer-form button{
-  height:44px;
-  padding:0 16px;
-  border-radius:14px;
-  border:0;
-  background:var(--grad);
-  color:#061020;
-  font-weight:950;
-  cursor:pointer;
-  white-space:nowrap;
+  margin-bottom:12px;
 }
 
 /* =====================================================
@@ -435,127 +381,11 @@ a{ color:inherit; text-decoration:none; }
 @media (max-width:980px){
   .grid3{ grid-template-columns:1fr; }
   .split{ grid-template-columns:1fr; }
-  .footer-top{ grid-template-columns:1fr 1fr; }
-  .footer-col-wide{
-    grid-column:1 / -1;
-    padding-left:0;
-    border-left:0;
-    margin-top:12px;
-  }
-  .footer-note{ max-width:none; }
-}
-@media (max-width:920px){
   .menu{ display:none; }
   .hero{ min-height:76vh; }
 }
-/* =====================================================
-   TYPOGRAPHY SCALE UP – CORE CONTENT
-   Safe global adjustment for readability
-   ===================================================== */
 
-/* Section titles */
-.section h2{
-  font-size: clamp(30px, 3vw, 32px);
-  line-height: 1.25;
+@media (max-width:520px){
+  body{ font-size:16px; }
+  .lead{ font-size:17px; }
 }
-
-/* Capability / Extension card titles */
-.card h3{
-  font-size: 19.5px;
-  line-height: 1.35;
-}
-
-/* Main card body text */
-.card p{
-  font-size: 16.6px;
-  line-height: 1.72;
-  color: rgba(234,241,255,.86);
-}
-
-/* Supporting text (mini / typical applications) */
-.mini{
-  font-size: 14.6px;
-  line-height: 1.6;
-}
-
-/* Pills (tags at bottom) */
-.pill{
-  font-size: 14px;
-}
-
-/* =====================================================
-   FULL-WIDTH + READABILITY PATCH (ATCC-scale)
-   Paste at END of styles.css
-   ===================================================== */
-
-/* 1) 全站字体基线抬起来（暗色背景更需要大一点） */
-html { font-size: 16px; }
-body {
-  font-size: 16.5px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-/* 2) 核心：把内容容器从 1120 提升到更“官网”的尺度 */
-.container{
-  width: min(1320px, 92vw);
-  margin: 0 auto;
-  padding: 0 28px; /* 增加左右留白，宽屏更“稳” */
-}
-
-/* 3) 让“背景/区块”真正全宽（你已有，但这里更保险） */
-.section,
-.hero,
-.site-footer{
-  width: 100%;
-}
-
-/* 4) 文本可读性：段落最大行宽稍微放大（你原来900有点偏窄） */
-.section p{
-  font-size: 17px;
-  line-height: 1.8;
-  max-width: 980px;
-  color: rgba(234,241,255,.86);
-}
-
-/* 5) Hero 的 lead 也放大一点（官网感来自 hero 字号和宽度） */
-.lead{
-  font-size: 19px;
-  line-height: 1.7;
-  max-width: 860px;
-}
-
-/* 6) 标题再抬一点点（但不夸张，保持你“冷静专业”） */
-.h1{
-  font-size: clamp(42px, 4.8vw, 66px);
-}
-.section h2{
-  font-size: clamp(30px, 3vw, 36px);
-}
-
-/* 7) 卡片正文略抬：你现在 card p 16.6 ok，但宽屏更需要一点重量 */
-.card p{
-  font-size: 16.8px;
-  line-height: 1.75;
-  color: rgba(234,241,255,.86);
-}
-.mini{
-  font-size: 14.8px;
-  line-height: 1.65;
-}
-
-/* 8) 超宽屏（>=1440）再给一点“铺满感” */
-@media (min-width: 1440px){
-  .container{ width: min(1400px, 92vw); }
-  .section{ padding: 86px 0; }
-  .hero-content{ padding: 88px 0; }
-}
-
-/* 9) 小屏不要太挤 */
-@media (max-width: 980px){
-  body{ font-size: 16px; }
-  .container{ padding: 0 18px; }
-  .lead{ font-size: 17px; }
-}
-
