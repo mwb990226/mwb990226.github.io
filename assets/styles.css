@@ -470,3 +470,153 @@ header .cta:hover{ filter:brightness(1.05); }
     grid-template-columns: 1fr !important;
   }
 }
+
+/* =====================================================
+   FOOTER — FINAL POLISH (enterprise layout)
+   Paste at END of styles.css
+   ===================================================== */
+
+.site-footer{
+  border-top: 1px solid rgba(255,255,255,.10);
+  background: linear-gradient(180deg, rgba(11,19,36,.55), rgba(7,11,20,1));
+}
+
+/* 让 footer 内容“聚拢”，不要散到两边 */
+.site-footer .container{
+  width: min(1180px, 92vw);     /* 关键：比全站窄一点，更像 ATCC */
+  padding: 0 24px;
+}
+
+.footer-inner{
+  padding: 56px 0 44px;
+}
+
+/* 核心：左边三列更紧凑，右边 newsletter 固定更宽 */
+.footer-top{
+  display: grid !important;
+  grid-template-columns: 180px 180px 220px 1fr !important;
+  column-gap: 44px !important;
+  row-gap: 18px !important;
+  align-items: start;
+}
+
+/* 标题更清晰 */
+.footer-title{
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 950;
+  color: rgba(234,241,255,.92);
+  margin: 0 0 10px;
+}
+
+/* 链接更像官网：行距更舒服 + hover 更明确 */
+.footer-col a{
+  display: block;
+  padding: 6px 0;
+  font-size: 14.5px;
+  font-weight: 650;
+  color: rgba(234,241,255,.72);
+}
+.footer-col a:hover{
+  color: rgba(234,241,255,.95);
+}
+
+/* 右侧宽栏：做成“区域”，而不是一堆散文字 */
+.footer-col-wide{
+  padding-left: 22px;
+  border-left: 1px solid rgba(255,255,255,.10);
+}
+
+/* Follow 小按钮区域对齐 */
+.footer-social{
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+.social{
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.05);
+  color: rgba(234,241,255,.86);
+  font-weight: 900;
+}
+.social:hover{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.22);
+}
+
+/* Newsletter 变得更“产品化” */
+.footer-note{
+  max-width: 520px;
+  color: rgba(234,241,255,.68);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.footer-form{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  margin-top: 12px;
+  align-items: stretch;
+}
+.footer-form input{
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+  outline: none;
+}
+.footer-form input:focus{
+  border-color: rgba(31,111,235,.55);
+  box-shadow: 0 0 0 4px rgba(31,111,235,.18);
+}
+.footer-form button{
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 0;
+  background: var(--grad);
+  color: #061020;
+  font-weight: 950;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* 底部版权行更干净 */
+.site-footer .mini{
+  margin-top: 14px;
+  color: rgba(234,241,255,.60);
+  font-size: 13.5px;
+}
+
+/* 响应式 */
+@media (max-width: 980px){
+  .site-footer .container{
+    width: min(980px, 92vw);
+  }
+  .footer-top{
+    grid-template-columns: 1fr 1fr !important;
+    column-gap: 28px !important;
+  }
+  .footer-col-wide{
+    grid-column: 1 / -1;
+    padding-left: 0;
+    border-left: 0;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px){
+  .footer-top{
+    grid-template-columns: 1fr !important;
+  }
+}
