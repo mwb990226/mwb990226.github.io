@@ -398,3 +398,22 @@ header .cta:hover{ filter:brightness(1.05); }
   .lead{ font-size:18px; }
   .h1{ font-size:clamp(40px, 8vw, 56px); }
 }
+
+/* =========================================
+   Fix duplicate Contact CTA (desktop vs mobile)
+   ========================================= */
+
+/* 默认：隐藏 mobile CTA（桌面端） */
+.cta-mobile{
+  display: none;
+}
+
+/* 小屏幕：隐藏 menu，显示 mobile CTA */
+@media (max-width: 920px){
+  .menu{
+    display: none;
+  }
+  .cta-mobile{
+    display: inline-flex;
+  }
+}
