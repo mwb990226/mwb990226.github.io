@@ -417,3 +417,56 @@ header .cta:hover{ filter:brightness(1.05); }
     display: inline-flex;
   }
 }
+/* =========================================
+   FOOTER LAYOUT FIX (Desktop)
+   ========================================= */
+
+.site-footer{
+  width: 100%;
+}
+
+.site-footer .container{
+  width: min(1360px, 92vw);
+}
+
+/* 核心：强制 footer grid 恢复为 4 列 */
+.footer-top{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1fr 1.35fr !important;
+  gap: 28px !important;
+  align-items: start;
+}
+
+/* 防止 footer 内容被全局 nav / a / button 规则影响 */
+.footer-top a,
+.footer-top button,
+.footer-top input{
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* Newsletter 表单对齐 */
+.footer-form{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+/* 社交按钮不要被拉伸 */
+.footer-social{
+  display: flex;
+  gap: 10px;
+}
+
+/* 移动端恢复为两列/一列 */
+@media (max-width: 980px){
+  .footer-top{
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 600px){
+  .footer-top{
+    grid-template-columns: 1fr !important;
+  }
+}
