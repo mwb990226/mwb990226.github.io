@@ -1,4 +1,9 @@
 /* =====================================================
+   EditVerity — VC-grade site styles (FINAL)
+   Replace your entire styles.css with this file.
+   ===================================================== */
+
+/* =====================================================
    GLOBAL TOKENS
    ===================================================== */
 :root{
@@ -18,7 +23,6 @@
 
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
-
 html{ font-size:16px; }
 
 body{
@@ -75,7 +79,7 @@ a{ color:inherit; text-decoration:none; }
 }
 
 /* =====================================================
-   NAVIGATION — FORCE BIG (NO MORE "STILL SMALL")
+   NAVIGATION
    ===================================================== */
 .nav{
   position:sticky;
@@ -94,16 +98,16 @@ a{ color:inherit; text-decoration:none; }
   gap:24px;
 }
 
-/* 你原来可能不是 .menu，所以这里同时覆盖：header/nav 里的链接和按钮 */
+/* Make nav readable */
 .nav, header, nav{
-  font-size:20px;               /* 🔥 关键：整体抬到 20px */
+  font-size:20px;
 }
 
 header a, header button,
 nav a, nav button,
 .nav a, .nav button,
 .menu a, .menu button{
-  font-size:20px !important;    /* 🔥 强制：不再被压回小字号 */
+  font-size:20px !important;
   line-height:1.1;
 }
 
@@ -121,7 +125,7 @@ nav a, nav button,
 .menu > .drop > button,
 nav a,
 nav button{
-  padding:14px 18px;            /* 🔥 点击区变大 */
+  padding:14px 18px;
   border-radius:16px;
   border:1px solid transparent;
   background:transparent;
@@ -144,7 +148,7 @@ header .cta{
   background:var(--grad);
   color:#061020;
   font-weight:950;
-  font-size:20px !important;    /* 🔥 CTA 同步大 */
+  font-size:20px !important;
   padding:14px 22px;
   border-radius:18px;
   box-shadow:0 12px 34px rgba(31,111,235,.18);
@@ -248,6 +252,25 @@ header .cta:hover{ filter:brightness(1.05); }
   flex-wrap:wrap;
 }
 
+/* Pills */
+.pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:22px;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.04);
+  font-size:13px;
+  font-weight:850;
+  color:rgba(234,241,255,.85);
+}
+
 /* =====================================================
    BUTTONS
    ===================================================== */
@@ -338,6 +361,12 @@ header .cta:hover{ filter:brightness(1.05); }
   text-transform:uppercase;
 }
 
+.mini{
+  color:rgba(234,241,255,.68);
+  font-size:14px;
+  line-height:1.7;
+}
+
 /* =====================================================
    SPLIT / BOX
    ===================================================== */
@@ -361,6 +390,10 @@ header .cta:hover{ filter:brightness(1.05); }
   font-weight:950;
 }
 
+.box ul{
+  margin: 0;
+  padding-left: 20px;
+}
 .box li{
   margin:7px 0;
   color:rgba(234,241,255,.82);
@@ -369,11 +402,13 @@ header .cta:hover{ filter:brightness(1.05); }
 }
 
 /* =====================================================
-   FOOTER
+   Fix duplicate Contact CTA (desktop vs mobile)
    ===================================================== */
-.site-footer{
-  background: linear-gradient(180deg, rgba(11,19,36,.55), rgba(7,11,20,1));
-  border-top:1px solid rgba(255,255,255,.10);
+.cta-mobile{ display:none; }
+
+@media (max-width: 920px){
+  .menu{ display:none; }
+  .cta-mobile{ display:inline-flex; }
 }
 
 /* =====================================================
@@ -383,10 +418,6 @@ header .cta:hover{ filter:brightness(1.05); }
   .grid3{ grid-template-columns:1fr; }
   .split{ grid-template-columns:1fr; }
 
-  /* 手机隐藏横向菜单（你原本也这么做） */
-  .menu{ display:none; }
-
-  /* 手机时不要太夸张 */
   header a, header button,
   nav a, nav button{
     font-size:17px !important;
@@ -399,120 +430,46 @@ header .cta:hover{ filter:brightness(1.05); }
   .h1{ font-size:clamp(40px, 8vw, 56px); }
 }
 
-/* =========================================
-   Fix duplicate Contact CTA (desktop vs mobile)
-   ========================================= */
-
-/* 默认：隐藏 mobile CTA（桌面端） */
-.cta-mobile{
-  display: none;
-}
-
-/* 小屏幕：隐藏 menu，显示 mobile CTA */
-@media (max-width: 920px){
-  .menu{
-    display: none;
-  }
-  .cta-mobile{
-    display: inline-flex;
-  }
-}
-/* =========================================
-   FOOTER LAYOUT FIX (Desktop)
-   ========================================= */
-
-.site-footer{
-  width: 100%;
-}
-
-.site-footer .container{
-  width: min(1360px, 92vw);
-}
-
-/* 核心：强制 footer grid 恢复为 4 列 */
-.footer-top{
-  display: grid !important;
-  grid-template-columns: 1fr 1fr 1fr 1.35fr !important;
-  gap: 28px !important;
-  align-items: start;
-}
-
-/* 防止 footer 内容被全局 nav / a / button 规则影响 */
-.footer-top a,
-.footer-top button,
-.footer-top input{
-  font-size: 14.5px;
-  line-height: 1.6;
-}
-
-/* Newsletter 表单对齐 */
-.footer-form{
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 12px;
-}
-
-/* 社交按钮不要被拉伸 */
-.footer-social{
-  display: flex;
-  gap: 10px;
-}
-
-/* 移动端恢复为两列/一列 */
-@media (max-width: 980px){
-  .footer-top{
-    grid-template-columns: 1fr 1fr !important;
-  }
-}
-
-@media (max-width: 600px){
-  .footer-top{
-    grid-template-columns: 1fr !important;
-  }
-}
-
 /* =====================================================
-   FOOTER — FINAL POLISH (enterprise layout)
-   Paste at END of styles.css
+   FOOTER — VC-grade (clean + aligned)
+   Goals:
+   - Link columns are left-aligned with Contact (same container)
+   - Follow icons sit on the far right, same row
+   - Newsletter under Follow, right column
+   - Responsive stack
    ===================================================== */
-
 .site-footer{
-  border-top: 1px solid rgba(255,255,255,.10);
   background: linear-gradient(180deg, rgba(11,19,36,.55), rgba(7,11,20,1));
-}
-
-/* 让 footer 内容“聚拢”，不要散到两边 */
-.site-footer .container{
-  width: min(1180px, 92vw);     /* 关键：比全站窄一点，更像 ATCC */
-  padding: 0 24px;
+  border-top: 1px solid rgba(255,255,255,.10);
 }
 
 .footer-inner{
-  padding: 56px 0 44px;
+  padding: 56px 0 46px;
 }
 
-/* 核心：左边三列更紧凑，右边 newsletter 固定更宽 */
+/* Main layout */
 .footer-top{
-  display: grid !important;
-  grid-template-columns: 180px 180px 220px 1fr !important;
-  column-gap: 44px !important;
-  row-gap: 18px !important;
-  align-items: start;
+  display:grid;
+  /* 4 left columns + 1 right column */
+  grid-template-columns: 190px 190px 210px 210px minmax(320px, 1fr);
+  column-gap: 48px;
+  row-gap: 22px;
+  align-items:start;
 }
 
-/* 标题更清晰 */
+/* Titles */
 .footer-title{
   font-size: 12px;
   letter-spacing: .16em;
   text-transform: uppercase;
   font-weight: 950;
   color: rgba(234,241,255,.92);
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
 
-/* 链接更像官网：行距更舒服 + hover 更明确 */
+/* Links */
 .footer-col a{
-  display: block;
+  display:block;
   padding: 6px 0;
   font-size: 14.5px;
   font-weight: 650;
@@ -522,101 +479,111 @@ header .cta:hover{ filter:brightness(1.05); }
   color: rgba(234,241,255,.95);
 }
 
-/* 右侧宽栏：做成“区域”，而不是一堆散文字 */
+/* Right column pinned to the right */
 .footer-col-wide{
-  padding-left: 22px;
-  border-left: 1px solid rgba(255,255,255,.10);
+  justify-self:end;
+  width:100%;
+  max-width: 440px;
+  padding-left: 0;
+  border-left: none;
+  text-align:right;
 }
 
-/* Follow 小按钮区域对齐 */
+/* Follow icons inline at right */
 .footer-social{
-  display: flex;
-  gap: 10px;
-  margin-top: 8px;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:10px;
+  margin: 8px 0 2px;
 }
+
 .social{
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255,255,255,.16);
-  background: rgba(255,255,255,.05);
+  width:36px;
+  height:36px;
+  border-radius:12px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.05);
   color: rgba(234,241,255,.86);
-  font-weight: 900;
 }
 .social:hover{
-  background: rgba(255,255,255,.10);
-  border-color: rgba(255,255,255,.22);
+  background:rgba(255,255,255,.10);
+  border-color:rgba(255,255,255,.22);
 }
 
-/* Newsletter 变得更“产品化” */
+.icon{ width:18px; height:18px; }
+
+/* Newsletter */
 .footer-note{
-  max-width: 520px;
   color: rgba(234,241,255,.68);
   font-size: 14px;
   line-height: 1.65;
+  margin-bottom: 10px;
 }
 
 .footer-form{
-  display: grid;
+  display:grid;
   grid-template-columns: 1fr auto;
-  gap: 10px;
-  margin-top: 12px;
-  align-items: stretch;
+  gap:10px;
+  align-items:stretch;
 }
+
 .footer-form input{
-  height: 44px;
-  padding: 0 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.04);
+  height:44px;
+  padding:0 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.04);
   color: var(--text);
-  outline: none;
+  outline:none;
 }
 .footer-form input:focus{
   border-color: rgba(31,111,235,.55);
   box-shadow: 0 0 0 4px rgba(31,111,235,.18);
 }
+
 .footer-form button{
-  height: 44px;
-  padding: 0 16px;
-  border-radius: 14px;
-  border: 0;
+  height:44px;
+  padding:0 16px;
+  border-radius:14px;
+  border:0;
   background: var(--grad);
-  color: #061020;
-  font-weight: 950;
-  cursor: pointer;
-  white-space: nowrap;
+  color:#061020;
+  font-weight:950;
+  cursor:pointer;
+  white-space:nowrap;
 }
 
-/* 底部版权行更干净 */
+.footer-status{
+  margin-top:10px;
+  font-size:13.5px;
+}
+
 .site-footer .mini{
   margin-top: 14px;
   color: rgba(234,241,255,.60);
   font-size: 13.5px;
 }
 
-/* 响应式 */
-@media (max-width: 980px){
-  .site-footer .container{
-    width: min(980px, 92vw);
-  }
+/* Responsive */
+@media (max-width: 1200px){
   .footer-top{
-    grid-template-columns: 1fr 1fr !important;
-    column-gap: 28px !important;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 28px;
   }
   .footer-col-wide{
     grid-column: 1 / -1;
-    padding-left: 0;
-    border-left: 0;
-    margin-top: 10px;
+    justify-self:start;
+    max-width:none;
+    text-align:left;
+  }
+  .footer-social{
+    justify-content:flex-start;
   }
 }
-
 @media (max-width: 600px){
-  .footer-top{
-    grid-template-columns: 1fr !important;
-  }
+  .footer-top{ grid-template-columns: 1fr; }
 }
